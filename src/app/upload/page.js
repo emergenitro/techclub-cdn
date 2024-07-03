@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
  
 export default function AvatarUploadPage() {
-  const inputFileRef = useRef(null);
+  const inputFileRef = useRef<HTMLInputElement>(null);
   const [blob, setBlob] = useState(null);
   return (
     <>
@@ -13,10 +13,10 @@ export default function AvatarUploadPage() {
         onSubmit={async (event) => {
           event.preventDefault();
  
-          const file = inputFileRef.current.files.[0];
+          const file = inputFileRef.current.files[0];
  
           const response = await fetch(
-            `/api/avatar/upload?filename=${file.name}`,
+            `/api/upload?filename=${file.name}`,
             {
               method: 'POST',
               body: file,
