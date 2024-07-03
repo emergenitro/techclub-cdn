@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
  
 export default function AvatarUploadPage() {
-  const inputFileRef = useRef<HTMLInputElement>(null);
+  const inputFileRef = useRef(null);
   const [blob, setBlob] = useState(null);
   return (
     <>
